@@ -8,22 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		81E3573C1FB4143D00C514D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E3573B1FB4143D00C514D1 /* AppDelegate.swift */; };
-		81E3573E1FB4143D00C514D1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E3573D1FB4143D00C514D1 /* ViewController.swift */; };
 		81E357411FB4143D00C514D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81E3573F1FB4143D00C514D1 /* Main.storyboard */; };
 		81E357441FB4143D00C514D1 /* ToDo_List.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 81E357421FB4143D00C514D1 /* ToDo_List.xcdatamodeld */; };
 		81E357461FB4143D00C514D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81E357451FB4143D00C514D1 /* Assets.xcassets */; };
 		81E357491FB4143D00C514D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81E357471FB4143D00C514D1 /* LaunchScreen.storyboard */; };
+		81E357511FB417E500C514D1 /* TodoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E357501FB417E500C514D1 /* TodoTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		81E357381FB4143D00C514D1 /* ToDo List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ToDo List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81E3573B1FB4143D00C514D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		81E3573D1FB4143D00C514D1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		81E357401FB4143D00C514D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		81E357431FB4143D00C514D1 /* ToDo_List.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDo_List.xcdatamodel; sourceTree = "<group>"; };
 		81E357451FB4143D00C514D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		81E357481FB4143D00C514D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		81E3574A1FB4143D00C514D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81E357501FB417E500C514D1 /* TodoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				81E3573B1FB4143D00C514D1 /* AppDelegate.swift */,
-				81E3573D1FB4143D00C514D1 /* ViewController.swift */,
+				81E357501FB417E500C514D1 /* TodoTableViewController.swift */,
 				81E3573F1FB4143D00C514D1 /* Main.storyboard */,
 				81E357451FB4143D00C514D1 /* Assets.xcassets */,
 				81E357471FB4143D00C514D1 /* LaunchScreen.storyboard */,
@@ -139,8 +139,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81E3573E1FB4143D00C514D1 /* ViewController.swift in Sources */,
 				81E3573C1FB4143D00C514D1 /* AppDelegate.swift in Sources */,
+				81E357511FB417E500C514D1 /* TodoTableViewController.swift in Sources */,
 				81E357441FB4143D00C514D1 /* ToDo_List.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,6 +279,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PXS299E333;
 				INFOPLIST_FILE = "ToDo List/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "kev.mudy.ToDo-List";
@@ -293,6 +294,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PXS299E333;
 				INFOPLIST_FILE = "ToDo List/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "kev.mudy.ToDo-List";
