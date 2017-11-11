@@ -38,6 +38,12 @@ class TodoTableViewController: UITableViewController {
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //send the reference to the view controller
+        let addViewController = segue.destination as! AddTodoViewController
+        addViewController.previousViewController = self 
+    }
+    
     //MARK: Testing vars and functions
     
     /*
