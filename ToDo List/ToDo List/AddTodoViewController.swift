@@ -28,14 +28,18 @@ class AddTodoViewController: UIViewController {
      */
     @IBAction func addToDoItem(_ sender: Any) {
         let todo = ToDo()
-        todo.name = titleTextField.text!
-        todo.important = importanceSwitch.isOn
-        
-        // add to the array
-        previousViewController.todoList.append(todo)
-        
-        reloadDataInViewController()
-        moveBackToMainView()
+        if let text = titleTextField.text {
+            todo.name = text
+            
+            todo.important = importanceSwitch.isOn
+            
+            // add to the array
+            previousViewController.todoList.append(todo)
+            
+            reloadDataInViewController()
+            moveBackToMainView()
+        }
+        // else do nothing
     }
     
     /*
