@@ -11,7 +11,7 @@ import UIKit
 class TodoCompleteViewController: UIViewController {
 
     var previousVC = TodoTableViewController()
-    var selectedTodo = ToDo()
+    var selectedTodo : ToDoCoreData? = nil
     
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -22,20 +22,31 @@ class TodoCompleteViewController: UIViewController {
     
     
     @IBAction func completeTodo(_ sender: Any) {
-        var index = 0
-        for todo in previousVC.todoList {
-            if todo.name == selectedTodo.name {
-                previousVC.todoList.remove(at: index)
-                reloadDataInViewController()
-                moveBackToMainView()
-                break
+//        var index = 0
+//        for todo in previousVC.todoList {
+//            if todo.name == selectedTodo.name {
+//                previousVC.todoList.remove(at: index)
+//                reloadDataInViewController()
+//                moveBackToMainView()
+//                break
+//            }
+//           index += 1
+//        }
+        /*
+         Delete the object from core data
+         */
+        
+        if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+            
+            if let theToDo = selectedTodo {
+                context.delete(theToDo)
+                navigationController?.popViewController(animated: true)
             }
-           index += 1
         }
     }
     
     private func setup() {
-        titleLabel.text = selectedTodo.name
+        titleLabel.text = selectedTodo?.name
     }
     
     /*

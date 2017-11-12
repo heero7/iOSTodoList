@@ -60,35 +60,14 @@ class TodoTableViewController: UITableViewController {
         //send the reference to the view controller
         if let addViewController = segue.destination as? AddTodoViewController {
             addViewController.previousViewController = self
-        } else if let todoCompleteViewController = segue.destination as? TodoCompleteViewController {
-            if let todo = sender as? ToDo {
+        }
+        
+        if let todoCompleteViewController = segue.destination as? TodoCompleteViewController {
+            if let todo = sender as? ToDoCoreData {
                 todoCompleteViewController.previousVC = self
                 todoCompleteViewController.selectedTodo = todo
             }
         }
-    }
-    
-    
-    //MARK: Testing vars and functions
-    
-    /*
-     Creates a dummy list of todo items
-     for testing purposes
-     */
-    private func createTestTodos() -> [ToDo] {
-        let eggs = ToDo()
-        eggs.name = "Buy eggs"
-        eggs.important = true
-        
-        let fruit = ToDo()
-        fruit.name = "Get apples, strawberries, and grapes"
-        fruit.important = true
-        
-        let napkins = ToDo()
-        napkins.name = "Get napkins for kitchen table"
-        napkins.important = false
-        
-        return [eggs, fruit, napkins]
     }
     
     /*
