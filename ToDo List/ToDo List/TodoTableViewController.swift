@@ -10,12 +10,18 @@ import UIKit
 
 class TodoTableViewController: UITableViewController {
 
-    var todoList : [ToDo] = []
+    var todoList : [ToDoCoreData] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        todoList = createTestTodos()
+    }
+    
+    /*
+     Function is called right before the view will appear
+     to reload necessary data
+     */
+    override func viewWillAppear(_ animated: Bool) {
+        getToDoItemsFromCoreData()
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -28,11 +34,14 @@ class TodoTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
         
         let todo = todoList[indexPath.row]  //whatever index/cell number we're looking at, get that                   //  todo item
+        if let name = todo.name {
         
-        if todo.important {
-            cell.textLabel?.text = "❗" + todo.name
-        } else {
-            cell.textLabel?.text = todo.name
+            if todo.important {
+                cell.textLabel?.text = "❗" + name
+            } else {
+                cell.textLabel?.text = todo.name
+            }
+            
         }
         
         return cell
@@ -66,7 +75,7 @@ class TodoTableViewController: UITableViewController {
      Creates a dummy list of todo items
      for testing purposes
      */
-    func createTestTodos() -> [ToDo] {
+    private func createTestTodos() -> [ToDo] {
         let eggs = ToDo()
         eggs.name = "Buy eggs"
         eggs.important = true
@@ -80,5 +89,20 @@ class TodoTableViewController: UITableViewController {
         napkins.important = false
         
         return [eggs, fruit, napkins]
+    }
+    
+    /*
+     Load the data from core data
+     */
+    private func getToDoItemsFromCoreData() {
+        if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+            
+            if let coreDataTodo = try? context.fetch(ToDoCoreData.fetchRequest()) as? [ToDoCoreData] {
+                if let theTodoItems = coreDataTodo {
+                    todoList = theTodoItems
+                    tableView.reloadData()
+                }
+            }
+        }
     }
 }
