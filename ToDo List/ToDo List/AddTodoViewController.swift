@@ -27,19 +27,30 @@ class AddTodoViewController: UIViewController {
      Adds an item to the main todo list array
      */
     @IBAction func addToDoItem(_ sender: Any) {
-        let todo = ToDo()
-        if let text = titleTextField.text {
-            todo.name = text
+//        let todo = ToDo()
+//        if let text = titleTextField.text {
+//            todo.name = text
+//
+//            todo.important = importanceSwitch.isOn
+//
+//            // add to the array
+//            previousViewController.todoList.append(todo)
+//
+//            reloadDataInViewController()
+//            moveBackToMainView()
+//        }
+//        // else do nothing
+        
+        if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+            let todo = ToDoCoreData(entity: ToDoCoreData.entity(), insertInto: context)
             
-            todo.important = importanceSwitch.isOn
-            
-            // add to the array
-            previousViewController.todoList.append(todo)
-            
-            reloadDataInViewController()
-            moveBackToMainView()
+            if let text = titleTextField.text {
+                todo.name = text
+                todo.important = importanceSwitch.isOn
+            }
+            try? context.save()
+            navigationController?.popViewController(animated: true)
         }
-        // else do nothing
     }
     
     /*

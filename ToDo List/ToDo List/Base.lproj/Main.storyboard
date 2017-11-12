@@ -87,7 +87,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iq7-6G-CHj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="193" y="734"/>
+            <point key="canvasLocation" x="193" y="795"/>
         </scene>
         <!--Add Todo View Controller-->
         <scene sceneID="DZI-6R-gJU">
