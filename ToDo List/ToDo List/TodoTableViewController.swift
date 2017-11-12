@@ -51,8 +51,14 @@ class TodoTableViewController: UITableViewController {
         //send the reference to the view controller
         if let addViewController = segue.destination as? AddTodoViewController {
             addViewController.previousViewController = self
+        } else if let todoCompleteViewController = segue.destination as? TodoCompleteViewController {
+            if let todo = sender as? ToDo {
+                todoCompleteViewController.previousVC = self
+                todoCompleteViewController.selectedTodo = todo
+            }
         }
     }
+    
     
     //MARK: Testing vars and functions
     
