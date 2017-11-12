@@ -38,6 +38,15 @@ class TodoTableViewController: UITableViewController {
         return cell
     }
     
+    /*
+     When you want to know when a particular cell has been tapped.
+     Use this function
+     */
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let todo = todoList[indexPath.row]
+        performSegue(withIdentifier: "moveToComplete", sender: todo)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //send the reference to the view controller
         if let addViewController = segue.destination as? AddTodoViewController {

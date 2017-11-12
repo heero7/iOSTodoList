@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		816D84501FB7E2B6008DDA1E /* TodoCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816D844F1FB7E2B6008DDA1E /* TodoCompleteViewController.swift */; };
 		81E3573C1FB4143D00C514D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E3573B1FB4143D00C514D1 /* AppDelegate.swift */; };
 		81E357411FB4143D00C514D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81E3573F1FB4143D00C514D1 /* Main.storyboard */; };
 		81E357441FB4143D00C514D1 /* ToDo_List.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 81E357421FB4143D00C514D1 /* ToDo_List.xcdatamodeld */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		816D844F1FB7E2B6008DDA1E /* TodoCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCompleteViewController.swift; sourceTree = "<group>"; };
 		81E357381FB4143D00C514D1 /* ToDo List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ToDo List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81E3573B1FB4143D00C514D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81E357401FB4143D00C514D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				81E3573B1FB4143D00C514D1 /* AppDelegate.swift */,
 				81E357501FB417E500C514D1 /* TodoTableViewController.swift */,
 				81E357541FB41F2200C514D1 /* AddTodoViewController.swift */,
+				816D844F1FB7E2B6008DDA1E /* TodoCompleteViewController.swift */,
 				81E3573F1FB4143D00C514D1 /* Main.storyboard */,
 				81E357451FB4143D00C514D1 /* Assets.xcassets */,
 				81E357471FB4143D00C514D1 /* LaunchScreen.storyboard */,
@@ -147,6 +150,7 @@
 			files = (
 				81E3573C1FB4143D00C514D1 /* AppDelegate.swift in Sources */,
 				81E357551FB41F2200C514D1 /* AddTodoViewController.swift in Sources */,
+				816D84501FB7E2B6008DDA1E /* TodoCompleteViewController.swift in Sources */,
 				81E357511FB417E500C514D1 /* TodoTableViewController.swift in Sources */,
 				81E357441FB4143D00C514D1 /* ToDo_List.xcdatamodeld in Sources */,
 				81E357531FB4187500C514D1 /* ToDo.swift in Sources */,
